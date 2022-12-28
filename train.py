@@ -5,8 +5,6 @@ def parse_args():
 
     parser = argparse.ArgumentParser('DDPM')
     # experimental settings
-    parser.add_argument('--seed', type=int, default=2020,
-        help='Random seed.')
     parser.add_argument('--root_path', type=str, default='../../data/',
         help='Path of datasets.')
     parser.add_argument('--result_path', type=str, default='./result')
