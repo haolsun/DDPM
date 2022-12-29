@@ -947,8 +947,9 @@ class Trainer(object):
 
                         all_images = torch.cat(all_images_list, dim = 0)
                         utils.save_image(all_images, str(self.results_folder / f'sample-{milestone}.png'), nrow = int(math.sqrt(self.num_samples)))
-                        self.save(milestone)
-
+                        if self.step != 0 and self.step % (self.save_and_sample_every * 10) == 0:
+                            self.save(milestone)
+  
                 pbar.update(1)
 
         accelerator.print('training complete')
